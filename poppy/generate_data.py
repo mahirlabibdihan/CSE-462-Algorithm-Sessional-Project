@@ -29,6 +29,24 @@ def generate_vrp_data(dataset_size, vrp_size):
         np.random.randint(1, 10, size=(dataset_size, vrp_size)).tolist(),  # Demand, uniform integer 1 ... 9
         np.full(dataset_size, CAPACITIES[vrp_size]).tolist()  # Capacity, same for whole dataset
     ))
+    
+# https://github.com/CIAM-Group/NCO_code/blob/main/single_objective/LEHD/CVRP/Transform_data/cvrp_example_transform_data.py
+# def generate_nazari_vrp_data(dataset_size, vrp_size):
+#     CAPACITIES = {
+#         10: 20.,
+#         20: 30.,
+#         50: 40.,
+#         100: 50.,
+#         200: 80.,
+#         500: 100.,
+#         1000: 250.,
+#     }
+#     return list(zip(
+#         np.random.uniform(size=(dataset_size, 2)).tolist(),  # Depot location
+#         np.random.uniform(size=(dataset_size, vrp_size, 2)).tolist(),  # Node locations
+#         np.random.randint(1, 10, size=(dataset_size, vrp_size)).tolist(),  # Demand, uniform integer 1 ... 9
+#         np.full(dataset_size, CAPACITIES[vrp_size]).tolist()  # Capacity, same for whole dataset
+#     ))
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
